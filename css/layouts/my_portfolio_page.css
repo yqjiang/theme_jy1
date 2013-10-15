@@ -1,0 +1,158 @@
+body {
+    background-color: #000;
+    font-size: 12px;
+}
+#page,
+.region-bottom {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: #000;
+    background-image: url(../../background.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    margin-bottom:0px;
+    bottom:0px;
+}
+
+#header,
+#main,
+#footer {
+    *position: relative;
+    *zoom: 1;
+}
+#header:before,
+#header:after,
+#main:before,
+#main:after,
+#footer:before,
+#footer:after {
+    content: "";
+    display: table;
+}
+#header:after,
+#main:after,
+#footer:after {
+    clear: both;
+}
+article {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    box-shadow: 0px 0px 5px #666;
+}
+
+article.node-main-page-content {
+    font-family: sans-serif;
+}
+/* Navigation bar */
+@media all and (min-width: 480px) {
+    #main {
+        /* Move all the children of #main down to make room. */
+        position: relative;
+        margin-bottom:0px;
+        bottom:0px;
+    }
+    #navigation {
+        /* Move the navbar up inside #main's padding. */
+        position: absolute;
+        top: 0;
+        height: 2em;
+        width: 100%;
+    }
+}
+#header,
+#content,
+#navigation,
+.region-sidebar-first,
+.region-sidebar-second,
+#footer {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+}
+
+#page-title,
+#navigation,
+#header
+{
+    display: none;
+}
+
+.block-title {
+    display: none;
+}
+.feed-icon {
+    display: none;
+}
+article.node-main-page-content ul {
+    display: none;
+}
+.sidebars {
+    margin-bottom:0px;
+    bottom:0px;
+}
+@media all and (min-width: 960px) {
+
+
+    /**
+     * The layout when there is only one sidebar, the right one.
+     */
+
+    /* Span 4 columns, starting in 1st column from left. */
+        /* Span 1 column, starting in 5th column from left. */
+    .sidebar-second .region-sidebar-second {
+        float: right;
+        width: 200px;
+        background-color: #666;
+        padding: 0px;
+        margin-right: -210px;
+        margin-left: -100%;
+        -moz-box-shadow:0px 5px 5px #000;               /* For Firefox3.6+ */
+        -webkit-box-shadow:0px 5px 5px #000;            /* For Chrome5+, Safari5+ */
+        box-shadow:0px 5px 5px #000;                    /* For Latest Opera */
+    }
+    
+    .sidebar-second #content {
+        float: right;
+        width: 1000px;
+        margin-left: -1000px;
+        margin-right: 210px;
+        margin-bottom:0px;
+        bottom:0px;
+    }
+
+
+
+    /* Span 1 column, starting in 1st column from left. */
+    .two-sidebars .region-sidebar-first {
+        float: left;
+        width: 470px;
+        margin-left: 0%;
+        margin-right: -40%;
+        margin-bottom:0px;
+        bottom:0px;
+    }
+
+    /* Span 1 column, starting in 5th column from left. */
+    .two-sidebars .region-sidebar-second {
+        float: left;
+        width: 20%;
+        margin-left: 80%;
+        margin-right: -100%;
+        margin-bottom:0px;
+        bottom:0px;
+    }
+}
+.region-sidebar-second div.block {
+    border-bottom: 1px dotted #BBB;
+}
+.two-sidebars .region-sidebar-first div#block-nivo-slider-nivo-slider
+{
+    box-shadow: 0px 0px -20px #666;
+}
